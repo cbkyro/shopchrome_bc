@@ -1,0 +1,52 @@
+// =============================================================================
+// BRAND GRID (CSS)
+// =============================================================================
+
+
+// Brand grid view
+// -----------------------------------------------------------------------------
+//
+// 1. Re-set the font-size, as we're reducing it to 0 in the .brandGrid class.
+//
+// -----------------------------------------------------------------------------
+img.brand-logo-heading{
+    border: 1px solid #d0d0d0;
+    border-radius: 3px;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+.brandGrid {
+
+    @include u-listBullets("none");
+    @include grid-row($behavior: "nest");
+    font-size: 0; // 1
+    margin-bottom: spacing("single");
+
+    .brand {
+        @include grid-column(6, $float: none);
+        display: inline-block;
+        font-size: fontSize("base"); // 1
+        vertical-align: top;
+
+        @include breakpoint("small") {
+            width: grid-calc(4, $total-columns);
+        }
+
+        @include breakpoint("medium") {
+            width: grid-calc(3, $total-columns);
+        }
+        img {
+            -webkit-border-radius: 2px;
+            -moz-border-radius: 2px;
+            border-radius: 2px;
+        }
+        // scss-lint:disable SelectorDepth, NestingDepth
+        .card-title {
+            text-align: center;
+            font-size: fontSize("base");
+            letter-spacing: 0;
+            font-weight: 700;
+            font-family: $fontFamily-sans;
+        }
+    }
+}

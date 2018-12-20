@@ -1,0 +1,9 @@
+<div class="module-wrapper productList">
+   <div class="productBlockContainer columns-{{columns}}">
+       {{#each products}}
+       <div class="prod-item wow fadeIn" data-wow-delay="{{multiply @index 3}}0ms">
+           {{>components/products/card productsnew=../products_new1 show_compare=../show_compare show_rating=../settings.show_product_rating theme_settings=../theme_settings customer=../customer}}
+       </div>
+       {{/each}}
+   </div>
+</div>

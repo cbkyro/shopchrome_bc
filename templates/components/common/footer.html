@@ -1,0 +1,68 @@
+{{#if banners.bottom}}
+<div class="banners" data-banner-location="bottom">
+    <div class="banner">
+        {{{limit banners.bottom 1}}}
+    </div>
+</div>
+{{/if}}
+
+<footer id="footer-wrapper">
+    <section id="main-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-1">
+                    <h5>Shop</h5>
+                    <ul>
+                        {{#each categories}}
+                        <li>
+                            <a href="{{url}}">{{name}}</a>
+                        </li>
+                        {{/each}}
+                        <!-- <li><a href="/lookbook/">Lookbook</a></li> -->
+                    </ul>
+                </div>
+                <div class="col-2">
+                    <h5>Customer Service</h5>
+                    <ul>
+                        <li><a href="/about-us/">About Us</a></li>
+                        <li><a href="giftcertificates.php">Gift Certificates</a></li>
+                        <!-- <li><a href="#">Help & FAQs</a></li> -->
+                        <!-- <li><a href="#">Advanced Search</a></li> -->
+                        <li><a href="/shipping-returns/">Shipping & Returns</a></li>
+                        <li><a href="/privacy-policy/">Privacy Policy</a></li>
+                        <li><a href="/contact-us/">Contact Us</a></li>
+                        <li><a href="{{urls.sitemap}}">{{lang 'sitemap.page_title'}}</a></li>
+                    </ul>
+                </div>
+                <div class="col-3">
+                    {{> components/common/social-links}}
+                    <p>&nbsp;</p>
+                    {{> components/halothemes/footer-facebook-like-button}}
+                </div>
+                <div class="col-4">
+                    {{#if settings.show_newsletter_box}} {{> components/common/subscription-form}} {{/if}}
+                        <div class="container text-{{theme_settings.copyright_alignment}}">
+                            {{#if theme_settings.show_copyright_footer}}
+                                <div class="footer-copyright">
+                                    <p>&copy; <span id="copyright_year"></span> {{settings.store_name}} All Rights Reserved.</p>
+                                </div>
+                                <script type="text/javascript">
+                                document.getElementById("copyright_year").innerHTML = new Date().getFullYear();
+                                </script>
+                            {{/if}}
+            
+                            {{> components/common/payment-icons}}
+                </div>
+                <div class="col-5">
+                            <table width="135" border="0" cellpadding="2" cellspacing="0" title="Click to Verify - This site chose GeoTrust SSL for secure e-commerce and confidential communications.">
+<tr>
+<td width="135" align="center" valign="top"><script type="text/javascript" src="https://seal.geotrust.com/getgeotrustsslseal?host_name=www.shopchrome.com&amp;size=S&amp;lang=en"></script><br />
+<a href="http://www.geotrust.com/ssl/" target="_blank"  style="color:#000000; text-decoration:none; font:bold 7px verdana,sans-serif; letter-spacing:.5px; text-align:center; margin:0px; padding:0px;"></a></td>
+</tr>
+</table>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</footer>

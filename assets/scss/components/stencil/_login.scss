@@ -1,0 +1,34 @@
+// =============================================================================
+// LOGIN (CSS)
+// =============================================================================
+
+
+.login-row {
+
+}
+
+.login-form {
+    .form-actions {
+        text-align: left;
+        input.btn, a.forgot-password {
+            display: inline-block;
+            vertical-align: middle;
+        }
+    }
+}
+
+.new-customer {
+
+}
+
+.new-customer-intro {
+    margin-bottom: 0;
+}
+
+.new-customer-fact-list {
+    margin-left: spacing("base");
+}
+
+.new-customer-fact {
+    padding-left: spacing("half");
+}

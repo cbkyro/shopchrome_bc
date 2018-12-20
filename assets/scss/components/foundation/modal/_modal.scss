@@ -1,0 +1,68 @@
+// =============================================================================
+// MODAL (CSS)
+// =============================================================================
+
+
+.modal {
+    // scss-lint:disable ImportantRule
+    left: 50%;
+    margin: 0 auto;
+    max-height: 90%;
+    max-width: 95%;
+    min-height: 240px;
+    outline: none;
+    overflow: hidden;
+    padding: 0;
+    right: 0;
+    top: 50% !important;
+    transform: translate(-50%, -50%);
+}
+
+.modal--large {
+    @include breakpoint("large") {
+        width: $modal-width--large;
+    }
+}
+
+.modal-header {
+
+    padding: 1.2rem 0;
+    padding-left: $reveal-modal-paddingHorizontal;
+    padding-right: remCalc($reveal-close-height) + $reveal-close-side;
+}
+
+.modal-header-title {
+    font-size: 12px;
+    text-align: center;
+    letter-spacing: 0;
+    text-transform: uppercase;
+
+
+}
+
+.modal-close {
+    @include square($reveal-close-height);
+    color: stencilColor("button--modal-close-color");
+    font-size: 23px;
+    line-height: remCalc(28px);
+    padding: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    text-align: center;
+    text-decoration: none !important;
+    z-index: zIndex("high");
+    background: stencilColor("button--modal-close-bgColor");
+
+    &:hover {
+        color: stencilColor("button--modal-close-colorHover");
+         text-decoration: none;
+         background: stencilColor("button--modal-close-bgColorHover");
+    }
+}
+
+.modal-body {
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: $reveal-modal-padding;
+}

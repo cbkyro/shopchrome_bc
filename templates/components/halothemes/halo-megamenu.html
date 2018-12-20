@@ -1,0 +1,108 @@
+<!-- @HaloMegaMenu Library -->
+<script src="{{cdn '/assets/js/theme/halothemes/haloMegaMenu.js'}}" defer></script>
+
+<script>
+$(document).ready(function() {
+    /* Megamenu Settings */
+
+    menuItem(0).HaloMegaMenu({
+        dropAlign: 'fullWidth',   // Dropdown MegaMenu Alignment: left, right, center, fullWidth
+        dropWidth: '800px',       // Width of Dropdown MegaMenu (if dropAlign: fullWidth => dropWidth auto set 100%)
+        dropType: 'imageRight',   // Type of Dropdown MegaMenu content: imageLeft, imageRight, noImage
+        imageAreaWidth: '40%',    // width of images area
+        cateAreaWidth: '60%',     // width of categories area
+        cateColumns: 3,           // columns of categories area - max 5 columns
+        // contents for images column (HTML supported)
+        images: '<div class="col-left">\
+                   <a href="#"><img src="/product_images/uploaded_images/mega-image-1.jpg"/></a>\
+                   <a href="#"><img src="/product_images/uploaded_images/mega-image-2.jpg"/></a>\
+               </div>\
+               <div class="col-right">\
+                   <a href="#"><img src="/product_images/uploaded_images/mega-image-3.jpg"/></a>\
+               </div>',
+        // information at bottom categories
+        bottomCates: '<div class="own-text"><p>free shipping in the u.s. & internationally</p></div>'
+    });
+
+
+    menuItem(0).HaloMegaMenu({
+        dropAlign: 'fullWidth',   // Dropdown MegaMenu Alignment: left, right, center, fullWidth
+        dropWidth: '800px',       // Width of Dropdown MegaMenu (if dropAlign: fullWidth => dropWidth auto set 100%)
+        dropType: 'imageRight',   // Type of Dropdown MegaMenu content: imageLeft, imageRight, noImage
+        imageAreaWidth: '20%',    // width of images area
+        cateAreaWidth: '80%',     // width of categories area
+        cateColumns: 4,           // columns of categories area - max 5 columns
+        // contents for images column (HTML supported)
+        images: '<a href="#"><img src="/product_images/uploaded_images/mega-image-4.jpg"/></a>'
+    });
+
+
+    menuItem(0).HaloMegaMenu({
+        dropAlign: 'fullWidth',   // Dropdown MegaMenu Alignment: left, right, center, fullWidth
+        dropWidth: '800px',       // Width of Dropdown MegaMenu (if dropAlign: fullWidth => dropWidth auto set 100%)
+        dropType: 'imageTop',     // Type of Dropdown MegaMenu content: imageLeft, imageRight, noImage
+        imageAreaWidth: '0%',     // width of images area
+        cateAreaWidth: '100%',    // width of categories area
+        cateColumns: 5,           // columns of categories area - max 5 columns
+        // contents for images column (HTML supported)
+        imagesTop: ['<a href="#"><img src="/product_images/uploaded_images/mega-image-5.jpg"/></a>',
+            '<a href="#"><img src="/product_images/uploaded_images/mega-image-6.jpg"/></a>',
+            '<a href="#"><img src="/product_images/uploaded_images/mega-image-7.jpg"/></a>',
+            '<a href="#"><img src="/product_images/uploaded_images/mega-image-8.jpg"/></a>',
+            '<a href="#"><img src="/product_images/uploaded_images/mega-image-9.jpg"/></a>'
+        ]
+    });
+
+    menuItem(1).HaloMegaMenu({
+        dropAlign: 'fullWidth',   // Dropdown MegaMenu Alignment: left, right, center, fullWidth
+        dropWidth: '600px',       // Width of Dropdown MegaMenu (if dropAlign: fullWidth => dropWidth auto set 100%)
+        dropType: 'imageLeft',    // Type of Dropdown MegaMenu content: imageLeft, imageRight, noImage
+        imageAreaWidth: '20%',    // width of images area
+        cateAreaWidth: '80%',     // width of categories area
+        cateColumns: 3,           // columns of categories area - max 5 columns
+        // contents for images column (HTML supported)
+        images: '<a href="https://shopchrome.com/women/"><img src="/product_images/uploaded_images/mega-image-3.jpg"/></a>'
+    });
+    menuItem(2).HaloMegaMenu({
+        dropAlign: 'fullWidth',   // Dropdown MegaMenu Alignment: left, right, center, fullWidth
+        dropWidth: '600px',       // Width of Dropdown MegaMenu (if dropAlign: fullWidth => dropWidth auto set 100%)
+        dropType: 'imageLeft',    // Type of Dropdown MegaMenu content: imageLeft, imageRight, noImage
+        imageAreaWidth: '20%',    // width of images area
+        cateAreaWidth: '80%',     // width of categories area
+        cateColumns: 3,           // columns of categories area - max 5 columns
+        // contents for images column (HTML supported)
+        images: '<a href="https://shopchrome.com/men/"><img src="/product_images/uploaded_images/mega-image-1.jpg"/></a>'
+    });
+    menuItem(3).HaloMegaMenu({
+        dropAlign: 'fullWidth',   // Dropdown MegaMenu Alignment: left, right, center, fullWidth
+        dropWidth: '600px',       // Width of Dropdown MegaMenu (if dropAlign: fullWidth => dropWidth auto set 100%)
+        dropType: 'imageLeft',    // Type of Dropdown MegaMenu content: imageLeft, imageRight, noImage
+        imageAreaWidth: '20%',    // width of images area
+        cateAreaWidth: '80%',     // width of categories area
+        cateColumns: 3,           // columns of categories area - max 5 columns
+        // contents for images column (HTML supported)
+        images: '<a href="https://shopchrome.com/baby-kids/"><img src="/product_images/uploaded_images/mega-image-4.jpg"/></a>'
+    });
+    menuItem(4).HaloMegaMenu({
+        dropAlign: 'fullWidth',   // Dropdown MegaMenu Alignment: left, right, center, fullWidth
+        dropWidth: '600px',       // Width of Dropdown MegaMenu (if dropAlign: fullWidth => dropWidth auto set 100%)
+        dropType: 'imageLeft',    // Type of Dropdown MegaMenu content: imageLeft, imageRight, noImage
+        imageAreaWidth: '20%',    // width of images area
+        cateAreaWidth: '80%',     // width of categories area
+        cateColumns: 3,           // columns of categories area - max 5 columns
+        // contents for images column (HTML supported)
+        images: '<a href="https://shopchrome.com/beauty/"><img src="/product_images/uploaded_images/mega-image-5.jpg"/></a>'
+    });
+    menuItem(6).HaloMegaMenu({
+       dropAlign: 'fullWidth',   // Dropdown MegaMenu Alignment: left, right, center, fullWidth
+        dropWidth: '600px',       // Width of Dropdown MegaMenu (if dropAlign: fullWidth => dropWidth auto set 100%)
+        dropType: 'imageLeft',    // Type of Dropdown MegaMenu content: imageLeft, imageRight, noImage
+        imageAreaWidth: '20%',    // width of images area
+        cateAreaWidth: '80%',     // width of categories area
+        cateColumns: 3,           // columns of categories area - max 5 columns
+        // contents for images column (HTML supported)
+        images: '<a href="https://shopchrome.com/lifestyle-gift/"><img src="/product_images/uploaded_images/mega-image-6.jpg"/></a>'
+    });
+
+});
+</script>

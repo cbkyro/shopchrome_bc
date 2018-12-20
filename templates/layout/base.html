@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html class="no-js" lang="{{ locale_name }}">
+    <head>
+        <title>{{ head.title }}</title>
+        {{{ head.meta_tags }}}
+        {{{ head.config }}}
+        {{#block "head"}} {{/block}}
+        <link href="{{ head.favicon }}" rel="shortcut icon">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        {{{stylesheet '/assets/css/theme.css'}}}
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        {{{head.scripts}}}
+        {{{head.rsslinks}}}
+
+        {{inject 'themeSettings' theme_settings}}
+        {{inject 'genericError' (lang 'common.generic_error')}}
+        {{inject 'maintenanceMode' settings.maintenance}}
+        {{inject 'urls' urls}}
+        {{{snippet 'htmlhead'}}}
+    </head>
+    <body class="page-type-{{page_type}}">
+        <div id="st-container" class="st-container">
+            <!-- content push wrapper -->
+            <div class="st-pusher">
+                <nav class="st-menu st-effect st-effect-1" id="mobile-categories">
+                    <ul></ul>
+                </nav>
+                <nav class="st-menu st-effect st-effect-2" id="mobile-customer">
+                    <ul>
+                        {{#if settings.account_creation_enabled}}
+                        <li class="login-register">
+                            {{#if customer}}
+                                <div class="logged-in">{{lang 'Welcome back,'}} <strong>{{customer.name}}. </strong></div>
+                            {{else}}
+                                <div class="not-logged">
+                                    <a href="{{urls.auth.login}}">{{lang 'common.login'}}</a><a href="{{urls.auth.create_account}}">{{lang 'common.sign_up'}}</a>
+                                </div>
+                            {{/if}}
+                        </li>
+                        {{/if}}
+
+                        {{#if customer.store_credit.value '>' 0}}
+                        <li class="hasSub">
+                            <a class="navUser-action--storeCredit">
+                                {{lang 'common.store_credit_overview' credit=customer.store_credit.formatted}}
+                            </a>
+                            <span class="toggle-expand"></span>
+                            <div id="storeCredit-dropdown">
+                                <div class="alert alert-info">
+                                    {{{lang 'common.store_credit' store_credit=customer.store_credit.formatted}}}
+                                </div>
+                            </div>
+                        </li>
+                        {{/if}}
+
+                        {{#if settings.gift_certificates_enabled}}
+                        <li>
+                            <a href="{{urls.gift_certificate.purchase}}">{{lang 'common.gift_cert'}}</a>
+                        </li>
+                        {{/if}}
+
+                        {{#if customer}}
+                        <li><a href="{{urls.account.index}}">{{lang 'common.account'}}</a></li>
+                        <li><a href="{{urls.account.orders.all}}">{{lang 'account.nav.orders'}}</a></li>
+                        {{#if settings.returns_enabled}}
+                        <li><a href="{{urls.account.returns}}">{{lang 'account.nav.returns'}}</a></li>
+                        {{/if}}
+                        <li><a href="{{urls.account.inbox}}">{{lang 'account.mobile_nav.messages'}}</a></li>
+                        <li><a href="{{urls.account.addresses}}">{{lang 'account.nav.addresses'}}</a></li>
+                        {{#if settings.show_wishlist}}
+                        <li><a href="{{urls.account.wishlists.all}}">{{lang 'account.mobile_nav.wishlists'}}</a></li>
+                        {{/if}}
+                        <li><a href="{{urls.account.recent_items}}">{{lang 'account.nav.recently_viewed'}}</a></li>
+                        <li><a href="{{urls.account.details}}">{{lang 'account.nav.settings'}}</a></li>
+                        {{else}}
+                        <li><a href="{{urls.account.index}}">{{lang 'common.account'}}</a></li>
+                        {{/if}}
+
+                        {{#if customer}}
+                        <li><a href="{{urls.auth.logout}}">{{lang 'common.logout'}}</a></li>
+                        {{/if}}
+
+                        <li class="mobile-call-us">{{> components/halothemes/header-phone-number}}</li>
+                    </ul>
+                </nav>
+                {{{snippet 'header'}}}
+                <div class="icons-svg-sprite">{{> components/common/icons/icon-defs }}</div>
+
+                {{#if settings.privacy_cookie}}
+                    {{> components/common/cookie}}
+                {{/if}}
+
+                {{> components/common/header }}
+                {{> components/common/body }}
+                {{> components/common/footer }}
+
+                <script>window.__webpack_public_path__ = "{{cdn 'assets/dist/'}}";</script>
+                <script src="{{cdn 'assets/dist/theme-bundle.main.js'}}"></script>
+                <script src="{{cdn '/assets/modernizr-custom.js'}}"></script>
+
+                <script>
+                    // Exported in app.js
+                    window.stencilBootstrap("{{template_file}}", {{jsContext}}).load();
+                </script>
+
+                {{#if theme_settings.halothemes_megamenu}}
+                    <!-- Begin HaloThemes MegaMenu -->
+                    {{> components/halothemes/halo-megamenu }}
+                    <!-- End HaloThemes MegaMenu -->
+                {{/if}}
+                <script>
+                    $(document).ready(function() {
+                        $('#mobile-categories ul').prepend($('#menu.navPages-container > .container > nav > ul').html());
+                        $('#mobile-categories ul').css('max-height', screen.height);
+                        $('#mobile-categories ul li').has('ul li').addClass('hasSub').prepend('<span class="toggle-expand"></span>');
+
+                        $('#mobile-categories ul li.hasSub > span').click(function() {
+                           if ($(this).hasClass('collapsed')) {
+                               $(this).siblings('.subMegaMenu').removeClass('sub-expand');
+                               $(this).parent().removeClass('expanded');
+                               $(this).attr('class', 'toggle-expand');
+                           } else {
+                               $(this).siblings('.subMegaMenu').addClass('sub-expand');
+                               $(this).parent().addClass('expanded');
+                               $(this).addClass('collapsed');
+                           }
+                        });
+
+                        $('#mobile-categories > ul > li.hasSub > span').click(function() {
+                            if($(this).parent().find('.navPage-subMenu').hasClass('custom_menu_2')) {
+                                $(this).parent().find('.navPage-subMenu').css('height', 0);
+                                $(this).parent().find('.navPage-subMenu').removeClass('custom_menu_2');
+                                $(this).parent().find('.expanded').removeClass('expanded');
+                                $(this).parent().find('.toggle-expand').removeClass('collapsed');
+
+                            } else {
+                                if ($(this).hasClass('collapsed')) {
+                                    var height_effect = $(this).parent().find('.navPage-subMenu > div').height();
+                                    if (height_effect == null) {
+                                        height_effect = $(this).parent().find('.navPage-subMenu > .navPage-subMenu-list').height();
+                                    }
+                                    $(this).parent().find('.navPage-subMenu').css('height', height_effect + 1);
+                                } else {
+                                    $(this).parent().find('.navPage-subMenu').css('height', 0);
+                                }
+                            }
+                        });
+                        
+                        $('.navPage-subMenu-list > .navPage-subMenu-item > .toggle-expand').on('click',function(){
+                            if(!$(this).parents('.navPage-subMenu').hasClass('custom_menu_2')) {
+                                var height_effect = $(this).parent().find('.navPage-childList').height();
+                                $(this).parents('.navPage-subMenu').css('height', height_effect + 1);
+                                $(this).parents('.navPage-subMenu').addClass('custom_menu_2');
+                            }
+                        });
+
+                        $('.close-navPage-childList').on('click', function() {
+                            $(this).parents('.navPage-subMenu').removeClass('custom_menu_2');
+                            var height_effect = $(this).parents('.navPage-subMenu').find(' > div').height();
+                            if (height_effect == null) {
+                                height_effect = $(this).parents('.navPage-subMenu').find('> .navPage-subMenu-list').height();
+                            }
+                            $(this).parents('.navPage-subMenu').css('height', height_effect + 1);
+                            $(this).parents('.navPage-subMenu-list').find('.expanded').removeClass('expanded');
+                            $(this).parents('.navPage-subMenu-list').find('.toggle-expand').removeClass('collapsed');
+                        });
+                    });
+
+                </script>
+
+                <script>
+
+                    {{#if theme_settings.halothemes_top_bar_promotion}}
+                        window.topBarPromotion();
+                    {{/if}}
+
+                    {{#if theme_settings.halothemes_sticky_navigation}}
+                        window.stickyNavigation();
+                    {{/if}}
+
+                    {{#if theme_settings.halothemes_lazy_loading_effect}}
+                        //Lazy Loading Effect
+                        window.lazyLoadingEffect();
+                    {{/if}}
+
+                </script>
+
+                {{#if theme_settings.halothemes_newsletter_popup}}
+                    {{> components/halothemes/newsletter-popup}}
+                {{/if}}
+
+                {{#if theme_settings.halothemes_newsletter_popup}}
+                    <!-- BEGIN Halo Newsletter Popup -->
+                    <script>
+                        window.haloNewsletterPopup(1, true);
+                    </script>
+                    {{else}}
+                    <script>
+                        window.haloNewsletterPopup(1, false);
+                    </script>
+                    <!-- END Halo Newsletter Popup -->
+                {{/if}}
+
+                {{#if settings.show_newsletter_box}}
+                <script>
+                    $(document).ready(function(){
+                        $('#footerSubcribeFormSubmit').submit(function(event){
+                            if ($('#footerSubcribeFormSubmit').find('#nl_email').val()  === '') {
+                                alert('Please enter your Email Address!');
+                                return false;
+                            }
+                        });
+                    });
+                </script>
+                {{/if}}
+
+                {{{footer.scripts}}}
+                {{{snippet 'footer'}}}
+
+
+            </div>
+        </div>
+    </body>
+</html>

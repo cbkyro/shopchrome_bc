@@ -1,0 +1,353 @@
+// =============================================================================
+// Stencil Checkout  - Customize the checkout experience
+// =============================================================================
+//
+// This file is for checkout customizations for Default one-page checkout.
+//
+// -----------------------------------------------------------------------------
+h1.TitleHeading {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    margin: 35px 0 5px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+}
+
+.Content .Block.ExpressCheckout {
+    padding-top: 60px;
+}
+
+.ExpressCheckoutBlock {
+    padding: 0 0;
+    margin-bottom: 15px;
+    //border: 1px solid #d0d0d0 !important;
+    font-size: 12px;
+    color: #000;
+    font-family: 'Roboto', sans-serif;
+    h2 {
+        font-size: 16px;
+        letter-spacing: 0.1em;
+        font-weight: 700;
+        font-family: 'Montserrat', sans-serif;
+        padding-bottom: 25px;
+        text-transform: uppercase;
+    }
+    dt {
+        font-size: 12px;
+        font-weight: 700;
+    }
+    dd > label {
+        font-weight: 700;
+    }
+    a {
+        font-size: 12px;
+        color: #000;
+    }
+    p {
+        font-size: 12px;
+    }
+    & > .ExpressCheckoutContent {
+        padding: 30px 20px;
+        & h4 {
+            font-size: 11px;
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: 0.05em;
+            font-weight: 700;
+            color: #000;
+        }
+    }
+    input[type="button"],
+    input[type="submit"] {
+        border-radius: 0;
+        font-size: 12px;
+        font-family: 'Montserrat', sans-serif;
+        letter-spacing: 0.1em;
+        height: 36px;
+        background: #000;
+        font-weight: 700;
+        padding: 7px 24px;
+        border: 2px solid #000;
+        -moz-transition: all 0.3s ease 0s;
+        -webkit-transition: all 0.3s ease 0s;
+        -ms-transition: all 0.3s ease 0s;
+        -o-transition: all 0.3s ease 0s;
+        transition: all 0.3s ease 0s;
+        &:hover {
+            background: #fff;
+            color: #000;
+            border: 2px solid #000;
+        }
+    }
+    input#bottom_payment_button {
+        height: 52px;
+    }
+    input[type="text"],
+    input[type="password"],
+    input[type="email"] {
+        height: 36px !important;
+        border-radius: 0;
+        border-color: #cbcbcb !important;
+        font-size: 12px !important;
+        padding-top: 0;
+        padding-bottom: 0;
+        &:focus {
+            border-color: #989898 !important;
+        }
+    }
+    .selector {
+        font-size: 12px !important;
+        height: 36px;
+        min-height: 36px !important;
+        border-radius: 0;
+        > span {
+            font-size: 12px !important;
+            line-height: 34px;
+            font-family: 'Roboto', sans-serif !important;
+        }
+    }
+    select.FormField {
+        font-size: 12px !important;
+    }
+}
+
+.ExpressCheckoutBlock .ExpressCheckoutTitle {
+    border-bottom: 1px solid #d0d0d0;
+    background: #fafafa;
+    & > span.ExpressCheckoutCompletedContent {
+        display: inline-block;
+    }
+}
+
+.ExpressCheckoutBlockCompleted a.ChangeLink {
+    font-size: 12px;
+    top: 8px !important;
+    right: 8px !important;
+    border-radius: 0;
+    position: absolute !important;
+}
+
+.ExpressCheckoutBlock .ExpressCheckoutTitle h3 {
+    font-size: 12px;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #000;
+    font-weight: 700;
+    margin-bottom: 0;
+    line-height: 50px;
+    display: inline-block;
+    padding-left: 0px;
+    padding-right: 20px;
+    min-width: 210px;
+    & .step {
+        position: static;
+        display: inline-block;
+        float: left;
+        min-width: 50px;
+        min-height: 50px;
+        line-height: 50px;
+        background: #fff;
+        color: #000;
+        font-size: 12px;
+        vertical-align: middle;
+        border-right: 1px solid #d0d0d0;
+        border-radius: 0;
+        margin-right: 20px;
+        transform: none !important;
+    }
+}
+
+.ExpressCheckoutBlockCollapsed .ExpressCheckoutTitle {
+    border-bottom: 0;
+}
+
+.ExpressCheckoutContent .AccountLogin {
+    input[type="text"],
+    input.Textbox {
+        margin-bottom: 10px;
+    }
+}
+
+.multiStep {
+    li {
+        & h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+        }
+        &.ActivePage {
+            & h4 {
+                border-width: 2px;
+                border-color: #000;
+            }
+        }
+    }
+}
+
+.ShippingAddressList {
+    h4 {
+        text-transform: none;
+        padding-top: 15px;
+    }
+}
+
+.checkout-banner a {
+    text-transform: uppercase;
+    font-size: 20px;
+    font-family: "Poppins", Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    color: #000;
+    letter-spacing: .1em;
+}
+
+.ExpressCheckoutBlock h1.TitleHeading {
+    font-family: "Poppins", Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    color: #000;
+}
+
+#SimilarMultiProductsByCustomerViews {
+    margin-top: 50px;
+}
+
+#SimilarMultiProductsByCustomerViews > h4 {
+    text-transform: uppercase;
+    font-size: 20px;
+    font-family: "Poppins", Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    color: #000;
+}
+
+.ExpressCheckoutBlock .js-share-button,
+.ExpressCheckoutBlock .ProductActionAdd .btn {
+    color: black;
+    border: 2px solid black;
+    background: white;
+    font-family: "Poppins", Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    vertical-align: middle;
+    font-weight: 700;
+    height: 36px;
+    line-height: 34px;
+    padding: 0 25px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    border-radius: 0;
+    transition: all 0.3s ease;
+}
+
+.ExpressCheckoutBlock .js-share-button:hover,
+.ExpressCheckoutBlock .ProductActionAdd .btn:hover {
+    color: #fff;
+    background-color: #000;
+}
+
+.ExpressCheckoutBlock .ProductActionAdd {
+    margin-top: 10px;
+}
+
+.ExpressCheckoutBlock .ProductList .p-price {
+    padding-bottom: 10px;
+}
+
+.ExpressCheckoutBlock .ProductList .p-price .RetailPriceValue,
+.ExpressCheckoutBlock .ProductList .p-price .SalePrice {
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 25px;
+    color: #969696;
+}
+
+.ExpressCheckoutBlock .ProductList .p-price .SalePrice {
+    color: #e95144;
+}
+
+#share-product .tabs .sharingTab {
+    border-radius: 0;
+    vertical-align: middle;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 15px 20px;
+    float: left;
+    font-family: "Poppins", Arial, Helvetica, sans-serif;
+}
+#share-product .tabs .sharingTab.active {
+    border-top: 1px solid #000;
+    border-bottom-color: #fff;
+    background: #fff;
+}
+
+#share-product .tabs {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    width: 100%;
+    vertical-align: bottom;
+}
+
+
+#tabcontent {
+    border-radius: 0;
+}
+
+
+
+@media (max-width: 600px) {
+    .ExpressCheckout {
+        padding-left: 5px !important;
+        padding-right: 5px !important;
+    }
+    .ExpressCheckoutContent .AccountLogin {
+        padding-left: 0;
+        input[type="text"],
+        input.Textbox {
+            margin-bottom: 10px;
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .ExpressCheckoutContent #uniform-sel_billing_address {
+        width: 100%;
+    }
+    .ExpressCheckoutBlock input[type="button"],
+    .ExpressCheckoutBlock input[type="submit"] {
+        font-size: 11px;
+        letter-spacing: 0.05em;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .checkout-banner a,
+    .ExpressCheckoutBlock h1.TitleHeading,
+    #SimilarMultiProductsByCustomerViews>h4 {
+        letter-spacing: 0;
+        font-size: 18px;
+    }
+
+    #share-product .tabs .sharingTab {
+        padding: 5px 5px;
+    }
+
+    #share-product .tabs .sharingTab img {
+        position: relative;
+        display: inline;
+        margin-right: 5px;
+    }
+    #tabcontent .photo {
+        margin-bottom: 15px;
+    }
+
+}
+
+@media (max-width: 320px) {
+    #share-product .tabs .sharingTab {
+        float: none;
+        display: block;
+        margin: 0;
+        padding: 10px 15px;
+    }
+}

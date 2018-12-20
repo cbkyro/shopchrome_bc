@@ -1,0 +1,34 @@
+<div class="pagination">
+    <ul class="pagination-list">
+        {{#if previous}}
+            <li class="pagination-item pagination-item--previous">
+                <a class="pagination-link" href="{{previous}}" {{#unless reload}}data-faceted-search-facet{{/unless}}>
+                    {{lang 'common.previous'}}
+                </a>
+            </li>
+        {{/if}}
+        {{#each links}}
+            {{#if this.number '==' ../current}}
+                <li class="pagination-item pagination-item--current">
+                    <a class="pagination-link" href="{{this.url}}" {{#unless reload}}data-faceted-search-facet{{/unless}}>{{this.number}}</a>
+                </li>
+            {{else}}
+                <li class="pagination-item">
+                    <a class="pagination-link" href="{{this.url}}" {{#unless reload}}data-faceted-search-facet{{/unless}}>{{this.number}}</a>
+                </li>
+            {{/if}}
+        {{/each}}
+
+        {{#if next}}
+            <li class="pagination-item pagination-item--next">
+                <a class="pagination-link" href="{{next}}" {{#unless reload}}data-faceted-search-facet{{/unless}}>
+                    {{lang 'common.next'}}
+                </a>
+            </li>
+        {{/if}}
+    </ul>
+
+    <div class="compare-link">
+        <a href="{{urls.compare}}" data-compare-nav>{{lang 'common.compare'}}<span class="countPill countPill--positive countPill--alt"></span></a>
+    </div>
+</div>

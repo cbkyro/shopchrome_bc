@@ -1,0 +1,14 @@
+{{{ snippet "forms_search"}}}
+<button class="search-toggle hide"><svg><use xlink:href="#icon-close"></use></svg><svg><use xlink:href="#icon-search"></use></svg></button>
+<form class="form" action="{{urls.search}}">
+    <fieldset class="form-fieldset">
+        <div class="form-field">
+            <label class="is-srOnly" for="search_query">{{lang "search.quick_search.input_label"}}</label>
+            <input class="form-input" data-search-quick name="search_query" id="search_query" data-error-message="{{lang 'search.error.empty_field'}}" placeholder="{{lang 'search.quick_search.input_placeholder'}}" autocomplete="off">
+            <button type="submit"><svg><use xlink:href="#icon-search"></use></svg></button>
+        </div>
+    </fieldset>
+</form>
+<div class="quickSearchResultsWrap" data-prevent-quick-search-close>
+    <section class="quickSearchResults" data-bind="html: results"></section>
+</div>

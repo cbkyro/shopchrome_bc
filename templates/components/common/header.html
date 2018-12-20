@@ -1,0 +1,100 @@
+{{#if banners.top}}
+<div class="banners" data-banner-location="top">
+    <div class="banner">
+        {{{limit banners.top 1}}}
+    </div>
+</div>
+{{/if}}
+<header class="header" role="banner">
+    <div class="header-top hide" id="top-bar-promotion">
+        <div class="container">
+            <p class="text-center">
+                <span><strong>FREE SHIPPING ON ALL ORDERS OVER $75!</strong></span>
+                <!-- <a href="/Cras-in-nunc-non-ipsum-duo-cursus-ultrices-est_p_1.html" class="link"> Shop Now</a> -->
+                <a href="javascript:void(0)" class="close">×</a>
+            </p>
+        </div>
+    </div>
+    <div class="header-bottom">
+        <div class="container">
+            <div class="header-panel-top">
+                <button type="button" id="mobile-search-toggle" class="visible-xs visible-sm"><svg><use xlink:href="#icon-close"></use></svg><svg><use xlink:href="#icon-search"></use></svg></button>
+                {{> components/common/navigation}}
+            </div>
+            <div class="header-panel row">
+                <div class="col-md-4 col-sm-12">
+
+                    <div id="st-trigger-effects" class="visible-sm visible-xs">
+                        <a class="menu-wrapper" data-effect="st-effect-1" href="javascript:void(0);">
+                            <!-- <svg><use xlink:href="#icon-trigger-bars" /></svg>
+                            <svg><use xlink:href="#icon-close"></use></svg> -->
+                            <div class="hamburger-menu"></div>
+                        </a>
+                    </div>
+
+                    {{#if template_file '===' 'pages/home'}}
+                    <h1 class="header-logo">
+                    {{> components/common/store-logo}}
+                    </h1> {{else}}
+                    <div class="header-logo">
+                        {{> components/common/store-logo}}
+                    </div>
+                    {{/if}}
+
+                    <div id="mobile-cart" class="visible-sm visible-xs"><a href="{{urls.cart}}">
+                        <!-- <img class="icon-cart" src="/assets/img/cart-4.png" alt=""> -->
+                        <svg class="icon-cart"><use xlink:href="#icon-cart"></use></svg>
+                        <span class="countPill{{#if cart.items}} countPill--positive{{/if}} cart-quantity">{{cart.quantity}}</span></a></div>
+                </div>
+                <div class="col-md-8 col-sm-12 text-right">
+                    <!-- <p class="own-text">Free shipping on All Orders. No Minimum Purchase.</p> -->
+
+                    <div id="top-cart" class="top-cart hidden-xs hidden-sm">
+                        <a data-cart-preview href="javascript:void(0);">
+                            <svg class="icon-cart"><use xlink:href="#icon-cart"></use></svg>
+                            <span class="navUser-item-cartLabel">Shopping Cart</span><span class="countPill{{#if cart.items}} countPill--positive{{/if}} cart-quantity">{{cart.quantity}}</span>
+                        </a>
+                        <div id="cart-preview-dropdown">
+                            <div class="triangle-with-shadow"></div>
+                            <div class="cart-preview-inner">
+                                {{> components/common/cart-preview}}
+                            </div>
+                        </div>
+                    </div>
+
+                    {{#if settings.show_wishlist}}
+                    <div class="wishlist-link hidden-xs hidden-sm">
+                        <a href="{{urls.account.wishlists.all}}">
+                        <span class="icon icon--heart"><svg><use xlink:href="#icon-heart" /></svg></span><span>{{lang 'account.nav.my_wish_lists'}}</span></a>
+                    </div>
+                    {{/if}}
+
+                    {{#if settings.account_creation_enabled}}
+                     <div class="login-register hidden-xs hidden-sm">
+                         {{#if customer}}
+                           <div class="logged-in">{{lang 'Welcome back,'}} <strong>{{customer.name}}. </strong><a href="{{urls.auth.logout}}"><span>{{lang 'common.logout'}}</span></a></div>
+                         {{else}}
+                           <div class="not-logged">
+                             <a href="{{urls.auth.login}}"><span>{{lang 'common.login'}}</span></a> {{lang 'common.or'}} <a href="{{urls.auth.create_account}}"><span>{{lang 'common.sign_up'}}</span></a>
+                           </div>
+                         {{/if}}
+                     </div>
+                 {{/if}}
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="navPages-container" id="menu" data-menu>
+        <div class="container">
+            {{> components/common/navigation-menu}}
+        </div>
+    </div>
+
+
+    <div class="sticky_logo">
+        <a href="{{settings.base_url}}" title="{{settings.store_logo.title}}"><img src="/product_images/uploaded_images/logo-scroll.png" alt=""></a>
+    </div>
+
+</header>

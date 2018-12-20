@@ -1,0 +1,174 @@
+// =============================================================================
+// BUTTONS (CSS)
+// =============================================================================
+
+/*Buttons*/
+
+.btn {
+    font-family: $fontFamily-headings;
+    font-size: fontSize("base");
+    font-weight: 700;
+    //line-height: 33px;
+    height: 36px;
+    padding: 0 25px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    border-radius: 0;
+    background: #fff;
+}
+a.btn {
+    line-height: 33px;
+}
+
+.btn.btn-sm {
+    font-size: 11px;
+    line-height: 26px;
+    height: 28px;
+    padding: 0 15px;
+    border-width: 1px !important;
+}
+
+.btn.btn-lg {
+    line-height: 44px;
+    height: 46px;
+    padding: 0 27px;
+}
+
+
+/*btn-primary*/
+
+.btn.btn-primary {
+    color: stencilColor('button--primary-color');
+    border: 2px solid stencilColor('button--primary-backgroundColor');
+    background: stencilColor('button--primary-backgroundColor');
+}
+
+.btn.btn-primary:hover {
+    color: stencilColor('button--primary-colorHover');
+    background: stencilColor('button--primary-backgroundColorHover');
+}
+
+.btn.btn-primary[disabled],
+.btn.btn-primary[disabled]:hover,
+.btn.btn-primary[disabled]:focus,
+.btn.btn-primary[disabled]:active {
+    color: stencilColor('button--primary-color');
+    border: 2px solid stencilColor('button--primary-backgroundColor');
+    background: stencilColor('button--primary-backgroundColor');
+}
+
+.btn-sm.btn-primary {
+    line-height: 24px;
+}
+
+.btn > i.fa.fa-caret-right {
+    font-size: 16px;
+    position: relative;
+    top: 1px;
+    margin-left: 9px;
+}
+
+/*btn alternate*/
+.btn.btn-alt {
+    color: stencilColor('button--alt-color');
+    border: 2px solid stencilColor('button--alt-borderColor');
+    background: stencilColor('button--alt-bgColor');
+}
+
+.btn.btn-alt:hover {
+    color: stencilColor('button--alt-colorHover');
+    background: stencilColor('button--alt-bgColorHover');
+    border-color: stencilColor('button--alt-borderColorHover');
+}
+
+.btn.btn-alt-white {
+    color: #fff;
+    border: 2px solid #fff;
+    background: #000;
+}
+
+.btn.btn-alt-white:hover {
+    color: #000;
+    background: #fff;
+}
+.btn.btn-alt[disabled],
+.btn.btn-alt[disabled]:hover,
+.btn.btn-alt[disabled]:focus,
+.btn.btn-alt[disabled]:active {
+    color: stencilColor('button--alt-color');
+    border: 2px solid stencilColor('button--alt-borderColor');
+    background: stencilColor('button--alt-bgColor');
+}
+
+
+/*btn-default*/
+
+.btn.btn-default {
+    border-color: #cbcbcb;
+}
+
+.btn.btn-default:hover {
+    background: #f5f5f5;
+}
+
+
+/*btn-checkout*/
+
+.btn.btn-checkout {
+    line-height: 42px;
+    max-width: 270px;
+    height: 42px;
+    padding: 0 48px;
+    color: stencilColor('button--checkout-color');
+    border-color: stencilColor('button--checkout-bgColor');
+    background:stencilColor('button--checkout-bgColor');
+}
+
+.btn.btn-checkout:hover {
+    border-color: stencilColor('button--checkout-bgColorHover');
+    background: stencilColor('button--checkout-bgColorHover');
+}
+
+/*btn disabled*/
+.btn.disabled, .btn[disabled], fieldset[disabled] .btn {
+    opacity: .5;
+    filter: alpha(opacity=50);
+}
+
+.button {
+    line-height: 1rem;
+    transition: all 0.15s ease;
+
+    + .button {
+        margin-left: 0;
+
+        @include breakpoint("medium") {
+            margin-left: spacing("half");
+        }
+    }
+}
+
+.button[disabled] {
+    cursor: not-allowed;
+}
+
+.button--icon {
+
+    svg {
+        fill: stencilColor("button--icon-svg-color");
+    }
+}
+
+
+/* btn-out-of-stock*/ 
+.btn.btn-out-of-stock {
+    color: stencilColor('button--disabled-color');
+    border: 2px solid stencilColor('button--disabled-borderColor');
+    background: stencilColor('button--disabled-backgroundColor');
+}
+
+.btn.btn-out-of-stock:hover {
+    color: stencilColor('button--disabled-color');
+    border: 2px solid stencilColor('button--disabled-borderColor');
+    background: stencilColor('button--disabled-backgroundColor');
+}

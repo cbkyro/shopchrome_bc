@@ -1,0 +1,16 @@
+<div id="footerSubcribeForm">
+    <h5>GET IN THE KNOW</h5>
+    <form class="form" action="{{urls.subscribe.action}}" method="post" id="footerSubcribeFormSubmit">
+        <fieldset class="form-fieldset">
+            <input type="hidden" name="action" value="subscribe">
+            <input type="hidden" name="nl_first_name" value="bc">
+            <input type="hidden" name="check" value="1">
+            <div class="form-field">
+                <div class="form-wrap">
+                    <input class="form-input" id="nl_email" name="nl_email" type="email" value="{{customer.email}}" placeholder="Enter your email">
+                    <input class="btn btn-subcribe" type="submit" value="Continue">
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</div>

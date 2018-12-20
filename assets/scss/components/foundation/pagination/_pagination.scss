@@ -1,0 +1,177 @@
+// =============================================================================
+// PAGINATION (CSS)
+// =============================================================================
+// Pagination list items
+// -----------------------------------------------------------------------------
+//
+// 1. Centred list via inline-block. Font-size: 0; to remove white-space.
+// 2. Specificity overrides for Foundation's inadequate selectors.
+//
+// -----------------------------------------------------------------------------
+.pagination {
+    position: relative;
+	clear:both;
+}
+
+.page-type-category .pagination,
+.page-type-search .pagination,
+.page-type-brands .pagination,
+.page-type-brand .pagination,
+.page-type-account_recentitems .pagination {
+    border: 1px solid #d0d0d0;
+    background: #eee;
+    min-height: 50px;
+    margin-bottom: 30px;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &.only-compare {
+        justify-content: end;
+    }
+    @media (max-width: 600px) {
+        flex-wrap: wrap;
+    }
+}
+
+.pagination-list {
+    @include clearfix;
+    display: inline-block;
+    font-size: 0; // 1
+    margin-bottom: 0;
+    text-align: center;
+    .pagination-item {
+        // 2
+        display: inline-block;
+        margin: 0;
+        & a {
+            text-transform: uppercase;
+            font-size: fontSize("base");
+            color: #000;
+            min-width: 26px;
+            &:hover {
+                text-decoration: none;
+            }
+        }
+        &.pagination-item--previous a,
+        &.pagination-item--next a {
+            font-weight: 600;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+        &.pagination-item--previous a,
+        &.pagination-item--next a {
+            color: $anchor-font-color;
+            padding: 8px 20px;
+            border-radius: 3px;
+            border: 1px solid #d7d7d7;
+            color: #ccc;
+            text-indent: -9999px;
+            width: 45px;
+            position: relative;
+            z-index: 1;
+            &:hover {
+                color: $anchor-font-color;
+               border: 1px solid #d7d7d7;
+            }
+        }
+        &.pagination-item--next{
+            position: relative;
+                height: 38px;
+            &:before{
+                content: '';
+                position: absolute;
+                background: url(../img/list-sprite.png) 0 -188px no-repeat;
+                position: absolute;
+                width: 23px;
+                height: 14px;
+                top: 13px;
+                left: 12px;
+            }
+        }
+        &.pagination-item--previous{
+            position: relative;
+                height: 38px;
+            &:before{
+                content: '';
+                position: absolute;
+                background: url(../img/list-sprite.png) 0 -227px no-repeat;
+                position: absolute;
+                width: 23px;
+                height: 14px;
+                top: 13px;
+                left: 12px;
+            }
+        }
+        &.pagination-item--current a {
+            font-weight: 600;
+            color: #e06868;
+        }
+    }
+}
+
+.page-type-category .pagination-list,
+.page-type-search .pagination-list,
+.page-type-brands .pagination-list,
+.page-type-brand .pagination-list,
+.page-type-account_recentitems .pagination-list {
+    padding-left: 10px;
+    padding-right: 10px;
+    @media (max-width: 600px) {
+        width: 100%;
+        padding: 10px;
+    }
+}
+
+.compare-link {
+    opacity: 0;
+    visibility: hidden;
+    align-self:stretch;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    background: #fff;
+    padding: 0 15px;
+    border: 1px solid #d0d0d0;
+    border-width: 0 0 0 1px;
+    min-width: 200px;
+    @media (max-width: 600px) {
+        width: 100%;
+        height: 50px;
+        border-width: 1px 0 0 0;
+    }
+    & a {
+        display: inline-block;
+        padding: 0px 10px;
+        text-transform: uppercase;
+        font-weight: 600;
+        font-size: 11px;
+        & .countPill {
+            display: none;
+        }
+        &:hover {
+            text-decoration: none;
+        }
+    }
+    &.link-show {
+        & .countPill {
+            display: inline-block;
+        }
+    }
+}
+
+.page-type-category .compare-link,
+.page-type-search .compare-link,
+.page-type-brand .compare-link,
+.page-type-account_recentitems .compare-link {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+#productReviews-content {
+    .pagination {
+        text-align: center;
+    }
+}

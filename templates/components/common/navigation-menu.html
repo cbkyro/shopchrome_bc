@@ -1,0 +1,35 @@
+<nav class="navPages">
+    <ul class="navPages-list">
+        {{#each categories}}
+            <li class="navPages-item">
+                {{> components/common/navigation-list}}
+            </li>
+        {{/each}}
+        {{#unless theme_settings.hide_content_navigation}}
+            {{#each pages}}
+                 <li class="navPages-item">
+                     <a class="navPages-action" href="{{url}}">{{name}}</a>
+                 </li>
+             {{/each}}
+        {{/unless}}
+        {{#if settings.show_wishlist}}
+            <li class="navPages-item wishlist-link show_mobile">
+                <a href="{{urls.account.wishlists.all}}">
+                    <span class="icon icon--heart"><svg><use xlink:href="#icon-heart-2" /></svg></span>
+                    <span>{{lang 'account.nav.my_wish_lists'}}</span></a>
+            </li>
+        {{/if}}
+        {{#if settings.gift_certificates_enabled}}
+            <li class="navPages-item gift-certificates-link show_mobile">
+                <a href="{{urls.gift_certificate.purchase}}">
+                    <span class="icon icon--gift"><svg><use xlink:href="#icon-gift" /></svg></span>
+                    <span>{{lang 'common.gift_cert'}}</span></a>
+            </li>
+        {{/if}}
+        <li class="navPages-item hotline show_mobile">
+            <span class="icon icon--phone"><svg><use xlink:href="#icon-phone" /></svg></span>
+            {{> components/halothemes/header-phone-number}}
+        </li>
+        {{> components/common/currency-selector}}
+    </ul>
+</nav>
