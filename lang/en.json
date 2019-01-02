@@ -698,7 +698,7 @@
         },
         "results": {
             "form_label": "Search Keyword:",
-            "form_button_text": "Search",
+            "form_button_text": "Search Now",
             "count": "{ count, plural, one {# result} other {# results} } for '{ search_query }'",
             "quick_count": "{ count, plural, one {# product result} other {# product results} } for '{ search_query }'",
             "product_count": "Products ({count})",
@@ -732,8 +732,8 @@
         }
     },
     "page_not_found": {
-        "page_heading": "404 Error - Page not found",
-        "message": "Uh oh, looks like the page you are looking for has moved or no longer exists."
+        "page_heading": "Oops!",
+        "message": "We can't seem to find the page you're looking for."
     },
     "server_error": {
         "page_heading": "Something Went Wrong...",
