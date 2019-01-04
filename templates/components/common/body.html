@@ -1,10 +1,6 @@
 <div class="body">
     {{#block "hero"}} {{/block}}
-    {{#if template_file '===' 'pages/errors/404'}}
-        <div class="container_page grey">
-    {{else}}
-        <div class="container_page">
-    {{/if}}
+    <div class="container_page">
         {{#block "page"}} {{/block}}
     </div>
     {{> components/common/modal}}
